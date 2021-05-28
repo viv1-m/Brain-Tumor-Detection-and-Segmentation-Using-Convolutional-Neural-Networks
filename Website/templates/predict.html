@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Prediciton</title>
+        <meta charset="UTF-8">
+        <link href="static/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <center>
+            <div class='cont'>
+            
+            <h1>Welcome to prediction</h1>
+            
+            <h3>Brain Tumor is present : {{data}}</h3>
+            
+
+        </div>
+            <h3>Prediction<br> Currency: <span>{{data[0]}}</span> <br>Confidence: <span>{{data[1]}}</span><br> </h3>
+
+            <img src="{{url_for('load_img')}}" alt='img'>
+            <a href="/" class='btn'>go back</a>
+
+        </center>
+
+    </body>
+</html>
