@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="static/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <center>
+            <div class='cont'>
+                <h2>Tumor Detection Result</h2>
+            </div>   
+
+            <div>
+                {% if y_hat == 1 %}
+                <img src="{{img_src}}" alt = "brain image">
+                <h3>Tumor Detected</h3>
+                <form method="POST" action="segmentation" enctype="multipart/form-data">
+                    <input type="text" name="age" placeholder="enter age"><br>
+                    <input type="file" name='image1' class='btn' value="enter flair image"><br>
+                    <input type="file" name='image2' class='btn' value="enter t1 image"><br>
+                    <input type="file" name='image3' class='btn' value="enter t1ce image"><br>
+                    <input type="file" name='image4' class='btn' value="enter t2 image"><br>
+                    <input type="file" name='image5' class='btn' value="enter seg image"><br><br><br>
+                    <input type = "submit" class = "btn" value = "segment tumor">
+                </form>
+                {% else %}
+                <h3> No tumor detected </h3>
+
+                {% endif %}
+            </div>
+
+        </center>
+
+    </body>
+</html>
